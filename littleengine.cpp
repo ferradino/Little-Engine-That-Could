@@ -6,6 +6,7 @@ using namespace std;
 int main() {
 
     // Step 1: Define variables 
+    
     int 
         tractiveEffort, // Power of the train
         numLumber, 
@@ -37,6 +38,7 @@ int main() {
         R2 = 0.01;         // Resistance due to incline
 
     // Step 2: Get input from user
+    
     cout << "Enter weight of locomotive (lbs): ";
     cin >> weightOfLocomotive;
     cout << "Enter tractive effort (lbf): ";
@@ -54,24 +56,30 @@ int main() {
     
 
     // Step 3: Calculate max load
+    
     maxLoad = tractiveEffort / (R1 + rulingGrade * R2);
     
     // Step 4.1: Calculate weight of lumber
+    
     weightOfLumber = numLumber * LUMBER_MASS * KG_TO_LBS;
     
     // Step 4.2: Calculate weight of beams
+    
     weightOfBeams = numBeams * BEAM_MASS * KG_TO_LBS;
     
     // Step 4.3: Calculate weight of flatcars
+    
     numBeamFlatcars = (numBeams + BEAM_CAPACITY - 1) / BEAM_CAPACITY;        // ceil(n/d) for beam cars
     numLumberFlatcars = (numLumber + LUMBER_CAPACITY - 1) / LUMBER_CAPACITY; // ceil(n/d) for lumber cars
 
     weightOfFlatcars = (numBeamFlatcars + numLumberFlatcars) * FLATCAR_MASS * KG_TO_LBS;
     
     // Step 4.4: Calculate weight of train
+    
     weightOfConsist = weightOfLocomotive + weightOfLumber + weightOfBeams + weightOfFlatcars;
 
     // Step 5: Output results
+    
     cout << endl;
     cout << setprecision(10);
     
@@ -81,6 +89,7 @@ int main() {
     cout << "Maximum load: " << maxLoad << " lbs" << endl;
     
     // Determine whether train can carry laod
+    
     if (weightOfConsist <= maxLoad) {   // Train can carry load
         cout << "The locomotive can move the consist along the grade" << endl;
 
