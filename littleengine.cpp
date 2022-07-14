@@ -53,6 +53,7 @@ int main() {
     cin >> rulingGrade;
 
     // Step 2.1: Validate input data from user
+    
     if (weightOfLocomotive < 15000) {
         cout << "Error: Locomotive weight must be greater then 15000 lbs";
         return 1;
@@ -62,10 +63,11 @@ int main() {
     if (tractiveEffort < 2000) {
         cout << "Error: Tractive effort must be greater than 2000 lbf";
         return 1;
+
     }
     
     if (numBeams < 0 || numLumber < 0) {
-        cout << "Error: Units of beams and/or lumber must be zero or greater" << endl;
+        cout << "Error: Units of lumber and/or beams must be zero or greater" << endl;
         return 1;
 
     }
