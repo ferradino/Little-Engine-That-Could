@@ -8,7 +8,6 @@ int main() {
     // Step 1: Define variables 
     
     int 
-        tractiveEffort,         // Power of the train
         numLumber, 
         numBeams,
         numLumberFlatcars,
@@ -22,6 +21,7 @@ int main() {
         BEAM_CAPACITY = 3;      // Max beams per flatcar
     
     double 
+        tractiveEffort,         // Power of the train
         maxLoad,                // Max weight the train can move 
         rulingGrade,            // Slope of track
         weightOfLumber,
@@ -52,28 +52,34 @@ int main() {
     cout << "Enter ruling grade (2.5% = 2.5): ";
     cin >> rulingGrade;
 
+    cout << endl;
+
     // Step 2.1: Validate input data from user
     
-    if (weightOfLocomotive < 15000) {
-        cout << "Error: Locomotive weight must be greater then 15000 lbs";
+    if (weightOfLocomotive < 15000) {           // Locomotive must weight at least 15000 lbs
+        cout << "Error: Locomotive weight must be at least 15000 lbs" << endl;
+        cout << endl;
         return 1;
 
     }
 
-    if (tractiveEffort < 2000) {
-        cout << "Error: Tractive effort must be greater than 2000 lbf";
+    if (tractiveEffort < 2000) {                // Train must have tractive effort of at least 2000 lbf
+        cout << "Error: Tractive effort must be at least 2000 lbf" << endl;
+        cout << endl; 
         return 1;
 
     }
     
-    if (numBeams < 0 || numLumber < 0) {
-        cout << "Error: Units of lumber and/or beams must be zero or greater" << endl;
+    if (numBeams < 0 || numLumber < 0) {        // Cannot have negative beams or lumber
+        cout << "Error: Units of lumber and/or beams cannot be negative" << endl;
+        cout << endl;
         return 1;
 
     }
 
-    if (rulingGrade < 0 || rulingGrade > 10) {
+    if (rulingGrade < 0 || rulingGrade > 10) {  // Ruling grade mostly between 0% and 10%
         cout << "Error: Ruling grade must be between 0% and 10%" << endl;
+        cout << endl;
         return 1;
 
     }
@@ -105,7 +111,6 @@ int main() {
 
     // Step 5: Output results and determine if train can carry load
     
-    cout << endl;
     cout << setprecision(10);
     
     cout << "Number of lumber cars: " << numLumberFlatcars << endl;
@@ -120,7 +125,9 @@ int main() {
         cout << "The locomotive cannot move the consist along the grade" << endl;
 
     }
-    
+
+    cout << endl; // Skip line after output for ease of reading in terminal window (personal preference)
+
     return 0;
 
 }   
