@@ -73,7 +73,7 @@ int main() {
     }
 
     if (rulingGrade < 0 || rulingGrade > 10) {
-        cout << "Error: Ruling grade must be between 0 and 10%" << endl;
+        cout << "Error: Ruling grade must be between 0% and 10%" << endl;
         return 1;
 
     }
